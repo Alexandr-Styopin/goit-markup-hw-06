@@ -32,6 +32,8 @@
   --footer-background: #2f303a;
   --backdrop-background: rgba(0, 0, 0, 0.2);
   --modal-bg-color: #ffffff;
+  --check-off-border: #212121;
+  --check-focus-bg: #dddddd;
   /* ----------------------------------------------- */
   --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -827,6 +829,9 @@ body {
   border: 1px solid var(--form-border-color);
   border-radius: 4px;
 }
+.form-input:focus {
+  border-color: var(--accent-color);
+}
 .comment-field {
   display: flex;
   flex-direction: column;
@@ -858,48 +863,38 @@ body {
   fill: var(--accent-color);
 }
 /* ------------------------------------------------ */
-
-.checkbox {
-  display: flex;
-  align-items: center;
+.check {
 }
-
-.form-checkbox-lable {
-  margin-left: 8.38px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71px;
-
-  letter-spacing: 0.03em;
-}
-
-.checkbox-lable-link {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71px;
-  color: var(--accent-color);
-}
-.form-checkbox-input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+.check_box {
   position: absolute;
-}
-.form-checkbox-input:checked + .check-icon {
-  border-color: transparent;
-  background-color: var(--accent-color);
-  background-image: url(../images/check.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-origin: border-box;
-  background-position: 50% 50%;
-}
-.check-icon {
   width: 16px;
   height: 15px;
-  border: 2px solid #212121;
+  background-color: #ffffff;
+  border: 2px solid;
   border-radius: 2px;
+  border-color: var(--check-off-border);
 }
+.check-lable {
+  padding-left: 24.38px;
+}
+
+.check-input:checked + .check_box {
+  background-image: url(../images/check.svg);
+  background-color: var(--accent-color);
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-size: contain;
+  background-position: 50% 50%;
+  border: 1px solid;
+  border-radius: 2px;
+  border-color: transparent;
+}
+.check-input:focus + .check_box {
+  border: 2px solid;
+  border-radius: 2px;
+  outline: var(--accent-color);
+}
+
 .submit-button {
   display: block;
   margin: 0 auto;
